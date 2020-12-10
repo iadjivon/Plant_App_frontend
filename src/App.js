@@ -39,7 +39,10 @@ const loaded = () => (
   {plants.map((plant)=>{
     return(
       <div>
-        <h1>{plant.description}</h1>
+        <h3>{plant.plant_name}</h3>
+        <h3> <img src = {plant.image}/></h3>
+        <h6>{plant.description}</h6>
+        <h3>{plant.pet_name}</h3>
         <button onClick ={async ()=> {
           await fetch (url + "/plants/" + plant.id, {
             method: "delete"
