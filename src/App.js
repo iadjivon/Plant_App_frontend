@@ -20,7 +20,8 @@ const emptyPlant = {
 };
 
 
-// const [selectedPlant, setSelectedPlant] = React.useState(emptyPlant)
+// STATE TO HOLD PLANT DATA
+const [selectedPlant, setSelectedPlant] = React.useState(emptyPlant)
 
 
 // // Function to get plants via API
