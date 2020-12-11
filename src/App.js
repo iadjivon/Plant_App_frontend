@@ -94,11 +94,19 @@ const handleCreate = async(event)=>{
 
     return (
       <div className="App">
+          
+          {/* ------------FORM TO SUBMIT A NEW PLANT */}
+          <form onSubmit={handldeCreate}>
+            <input type="text" name = "plant_name" placeholder=" scientific name of plant" value={createPlant.plant_name}/>
+            <input type="text" name = "description" placeholder=" brief description of plant" value={createPlant.description}/>
+            <input type="text" name = "image" placeholder=" image of plant" value={createPlant.image}/>
+            <input type="text" name = "pet_name" placeholder=" pet name for plant" value={createPlant.pet_name}/>
+            <input type="submit"  value= "Create New Plant"/>
+          </form>
+
           <h1>Novice Plant Mother</h1>
           {plants.length > 0 ? loaded() : <h2> there are no plants</h2>}
           {/* <Display/> */}
-
-          
       </div>
   );
 }
