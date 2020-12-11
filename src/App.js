@@ -11,7 +11,7 @@ function App () {
 // // state to hold plants 
     const [plants, setPlants] = React.useState([])
 
-// EMPTY PLANT 
+// // FUNCTION TO HOLD EMPTY PLANT 
 const emptyPlant = {
   plant_name: "",
   description: "",
@@ -20,8 +20,7 @@ const emptyPlant = {
 };
 
 
-// 
-const [selectedPlant, setSelectedPlant] = React.useState(emptyPlant)
+// const [selectedPlant, setSelectedPlant] = React.useState(emptyPlant)
 
 
 // // Function to get plants via API
