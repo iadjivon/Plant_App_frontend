@@ -69,6 +69,20 @@ const createChange = (event) =>{
   setCreatePlant({...createPlant, [event.target.name]: event.target.value})
 }
 
+// HANDLE CREATE FUNCTION FOR WHEN THE FORM IS SUBMITTED
+const handleCreate = async(event)=>{
+  event.preventDefault()
+  await fetch(url + "/plants", {
+    method: "post",
+    headers:{
+      "Content-type":"application/json"
+    },
+    body: JSON.stringify(createPlant)
+  })
+  getPlants()
+  setCreatePlant(emptyPlant)
+}
+
 
 
 // const selectPlant = (plant) => {
