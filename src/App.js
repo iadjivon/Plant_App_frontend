@@ -23,6 +23,10 @@ const emptyPlant = {
 // STATE TO HOLD PLANT DATA
 const [selectedPlant, setSelectedPlant] = React.useState(emptyPlant)
 
+// STATE TO HOLD NEW PLANT DATA
+const [createPlant, setCreatePlant] = React.useState(emptyPlant)
+
+
 
 // // Function to get plants via API
 const getPlants = async () => {
@@ -54,15 +58,18 @@ const loaded = () => (
           // GET UPDATED LIST OF NOTICES 
           getPlants()
         }}> Delete </button>
-
-        {/*------------ CREATE-------------*/}
-
-
       </div>
     )
   })}
   </>
 )
+
+//  HANDLECHAGE FOR OUR CREATE FORM 
+const createChange = (event) =>{
+  setCreatePlant({...createPlant, [event.target.name]: event.target.value})
+}
+
+
 
 // const selectPlant = (plant) => {
 //   setSelectedPlant(plant);
