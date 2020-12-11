@@ -6,20 +6,22 @@ import Display from './components/display';
 
 
 function App () {
-// varialble to hold url 
+// VARIABLE TO HOLD PLANTS 
     const url = "http://localhost:3000"
 // // state to hold plants 
-const [plants, setPlants] = React.useState([])
+    const [plants, setPlants] = React.useState([])
 
-// // empty plants 
-// const emptyPlant = {
-//   plant_name: "",
-//   description: "",
-//   image: "",
-//   pet_name: "",
-// };
+// EMPTY PLANT 
+const emptyPlant = {
+  plant_name: "",
+  description: "",
+  image: "",
+  pet_name: "",
+};
 
-// const [selectedPlant, setSelectedPlant] = React.useState(emptyPlant)
+
+// 
+const [selectedPlant, setSelectedPlant] = React.useState(emptyPlant)
 
 
 // // Function to get plants via API
@@ -43,12 +45,19 @@ const loaded = () => (
         <h3> <img src = {plant.image}/></h3>
         <h6>{plant.description}</h6>
         <h3>{plant.pet_name}</h3>
+
+        {/*------------ DELETE BUTTON------------- */}
         <button onClick ={async ()=> {
           await fetch (url + "/plants/" + plant.id, {
             method: "delete"
           })
+          // GET UPDATED LIST OF NOTICES 
           getPlants()
         }}> Delete </button>
+
+        {/*------------ CREATE-------------*/}
+
+
       </div>
     )
   })}
@@ -64,26 +73,10 @@ const loaded = () => (
 
     return (
       <div className="App">
-          <h1>Plant app</h1>
+          <h1>Novice Plant Mother</h1>
           {plants.length > 0 ? loaded() : <h2> there are no plants</h2>}
           {/* <Display/> */}
 
-
-          {/* <main>
-            <Router> 
-            {/* <Switch> */}
-              {/* <Route exact path="/" render={(rp) =>
-              <Display selectPlant = {selectPlant}
-              {...rp} plants={plants}
-              
-              />
-              }
-              /> */}
-              
-            {/* </Switch>  */}
-            {/* </Router> */}
-            
-          {/* </main>  */}
           
       </div>
   );
