@@ -1,41 +1,45 @@
 import React from 'react';
 
+ 
 const Display = (props) => {
-    // const plantData = (data) => {
-    //     const emptyPlant = {
-    //     plant_name: "",
-    //     description: "",
-    //     image: "",
-    //     pet_name: "",
-    // }
+    const {plants}=props
 
-    // data[0].plants.forEach((plant) => {
-    //     emptyPlant.description.push(plant.description)
-    // })
-// }
+    const loaded = () => (
+        <div>
+        
+        {plants.map((plant, index)=>(
+            <div>
+            <a href ={ `/plants/${index}`}>
+              <h3>{plant.plant_name}</h3>
+              </a>
+              <h3> <img src = {plant.image}/></h3>
+              <h6>{plant.description}</h6>
+              <h3>{plant.pet_name}</h3>
+              
+             {/*------------ EDIT BUTTON------------- */}
+            <button onClick ={()=>{props.selectPlant(plant);
+            props.history.push("/edit")}}> EDIT</button>
 
-// FETCHING DATA FROM THE API 
+              {/*------------ DELETE BUTTON------------- */}
+             <button onClick={()=> {props.deletePlant(plant);
+            }}> DELETE</button>
 
-// const getPlants = async () => {
-//     const response = await fetch("http://localhost:3000/plants")
-//     const data = await response.json()
-//     console.log(data)
-// }
+           
+      
+            </div>
+        ))}
+         
+        </div>
+      )
 
-// React.useEffect(()=>{
-//     getPlants()
-// }, [])
-
-
+        const loading = <h1> Loading ... </h1>
 
 
-        return (
-            <>
-            <h1> plant app </h1>
-            {/* <h1>{this.data.plants}</h1> */}
-            </>
-        )
-    }
+
+    return  plants.length >0 ? loaded(): loading
+       
+        
+    };      
 
 
 export default Display;

@@ -1,8 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import {Router, Route, Link, Switch} from 'react-router-dom'
-import Display from './components/display';
+import {Route, Link, Switch} from 'react-router-dom'
+
+import Display from './components/Display';
+import Form from './components/Form';
+import Show from './components/Show';
+
 
 
 function App () {
@@ -23,90 +27,109 @@ const emptyPlant = {
 // STATE TO HOLD PLANT DATA
 const [selectedPlant, setSelectedPlant] = React.useState(emptyPlant)
 
-// STATE TO HOLD NEW PLANT DATA
-const [createPlant, setCreatePlant] = React.useState(emptyPlant)
-
-
-
 // // Function to get plants via API
-const getPlants = async () => {
-  const response = await fetch(url + "/plants")
-  const data = await response.json()
-  setPlants(data)
-
-  }
+const getPlants = () => {
+   fetch(url + "/plants/")
+   .then(response => response.json()
+  .then(data => {
+    setPlants(data)
+  }))
+ }
 
 React.useEffect(()=>{
     getPlants()
 }, [])
 
-const loaded = () => (
-  <>
-  {plants.map((plant)=>{
-    return(
-      <div>
-        <h3>{plant.plant_name}</h3>
-        <h3> <img src = {plant.image}/></h3>
-        <h6>{plant.description}</h6>
-        <h3>{plant.pet_name}</h3>
-
-        {/*------------ DELETE BUTTON------------- */}
-        <button onClick ={async ()=> {
-          await fetch (url + "/plants/" + plant.id, {
-            method: "delete"
-          })
-          // GET UPDATED LIST OF NOTICES 
-          getPlants()
-        }}> Delete </button>
-      </div>
-    )
-  })}
-  </>
-)
-
-//  HANDLECHAGE FOR OUR CREATE FORM 
-const createChange = (event) =>{
-  setCreatePlant({...createPlant, [event.target.name]: event.target.value})
-}
 
 // HANDLE CREATE FUNCTION FOR WHEN THE FORM IS SUBMITTED
-const handleCreate = async(event)=>{
-  event.preventDefault()
-  await fetch(url + "/plants", {
+const handleCreate = (newPlant)=>{
+   fetch(url + "/plants", {
     method: "post",
     headers:{
       "Content-type":"application/json"
     },
-    body: JSON.stringify(createPlant)
+    body: JSON.stringify(newPlant)
+  }).then(response => {
+    getPlants()
   })
-  getPlants()
-  setCreatePlant(emptyPlant)
 }
 
 
 
-// const selectPlant = (plant) => {
-//   setSelectedPlant(plant);
-// }
+// HANDLE UPDATE FUNCTION 
+const handleUpdate = (plant)=>{
+ fetch(url + "/plants/" + plant.id, {
+    method: "put",
+    headers:{
+      "Content-type": "application/json"
+    },
+    body: JSON.stringify(plant)
+  }).then(response => getPlants())
+}
 
-// // useEffect to do the initial call of getPlants 
+const selectPlant = (plant) => {
+    setSelectedPlant(plant);
+    }
+
+const deletePlant = (plant)=>{
+  fetch(url + "/plants/" + plant.id, {
+    method: "delete",
+
+}).then((response)=>getPlants())
+}
 
 
     return (
       <div className="App">
-          
-          {/* ------------FORM TO SUBMIT A NEW PLANT */}
-          <form onSubmit={handleCreate}>
-            <input type="text" name = "plant_name" placeholder=" scientific name of plant" value={createPlant.plant_name} onChange={createChange}/>
-            <input type="text" name = "description" placeholder=" brief description of plant" value={createPlant.description} onChange={createChange}/>
-            <input type="text" name = "image" placeholder=" image of plant" value={createPlant.image} onChange={createChange}/>
-            <input type="text" name = "pet_name" placeholder=" pet name for plant" value={createPlant.pet_name} onChange={createChange}/>
-            <input type="submit"  value= "Create New Plant"/>
-          </form>
+  <header> 
+        <h1>Novice Plant Mother</h1>
+        <Link to="/create">
+          <button> Add New Plant</button>
+        </Link>
+        <Link to="/">
+          <button> Home</button>
+        </Link>
+  </header> 
 
-          <h1>Novice Plant Mother</h1>
-          {plants.length > 0 ? loaded() : <h2> there are no plants</h2>}
-          {/* <Display/> */}
+<div>
+
+          <Switch>
+            <Route exact path="/" render = {(rp)=>
+            <Display selectPlant={selectPlant}
+                  {...rp} plants={plants}
+                deletePlant={deletePlant}/>} />
+
+            <Route 
+              exact path="/create"
+              render={(rp) => (
+                <Form {...rp} label="create" plant={{emptyPlant}}
+                 handleSubmit=
+                {handleCreate} />
+                )}
+            />
+
+            <Route
+              exact path="/edit"
+              render={(rp) => (
+                <Form {...rp} label="update" plant={selectedPlant} handleSubmit={handleUpdate} />
+                )}
+            />
+        
+        <Route 
+          exact path="/plants/:id"
+          render={(rp) => (
+            <Show {...rp} plant={selectedPlant}/>)
+          }
+        />
+
+
+
+
+
+          </Switch>
+
+          </div>   
+       
       </div>
   );
 }
