@@ -38,7 +38,7 @@ const handleChange = (event) => {
             value={formData.pet_name} 
             onChange={handleChange}/>
 
-        <input
+        <textarea
             type="text" 
             name = "description" 
             placeholder=" Write a brief description about this plant" 

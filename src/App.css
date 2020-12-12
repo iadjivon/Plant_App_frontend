@@ -67,7 +67,7 @@
  background-color: rgba(150, 143, 143, 0.25);
  height: 550px;
 }
-
+/* 
 .header::after{
   content: " ";
   position: absolute;
@@ -78,7 +78,7 @@
 background-size: cover;
 margin-bottom: 10px;
 background-repeat: no-repeat;
-}
+} */
 
 .header h1{
   justify-content: center;
@@ -150,7 +150,7 @@ background-repeat: no-repeat;
   flex-wrap: wrap;
   flex-basis: center;
   /* background-color:#d9dad5; */
- background-image: url("https://i.pinimg.com/originals/a0/7e/bd/a07ebd32b489dcf01905f35d0f73b306.jpg");
+ background-image: url("https://img.sunset02.com/sites/default/files/styles/4_3_horizontal_inbody_900x506/public/image/2016/12/main/wood-mounted-staghorn-ferns-sun-0117.jpg?itok=5S8PxcHA");
   background-size: cover;
   background-repeat: no-repeat; 
   /* background-color: rgb(8, 49, 6); */
@@ -265,9 +265,23 @@ h2{
 }
 
 .textarea{
-  width: 500px;
+  width: 510px;
   height: 300px;
   columns: 10;
+  font-family: Arial, sans-serif;
+  font-size: larger;
+  text-indent: 20px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  align-content: center;
+  padding: 20px;
+  border: none;
+  /* text-align: center; */
+  /* text-justify: center; */
+}
+.textarea::placeholder{
+ margin-top: 100px;
 }
 
 /* -----------Form----------- */
