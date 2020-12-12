@@ -7,6 +7,8 @@ import Display from './components/Display';
 import Form from './components/Form';
 import Show from './components/Show';
 
+import Nav from 'react-bootstrap/Nav'
+import Button from 'react-bootstrap/Button'
 
 
 function App () {
@@ -78,20 +80,41 @@ const deletePlant = (plant)=>{
 }).then((response)=>getPlants())
 }
 
+/////////////////////////////
+// RETURN FUNCTION
+/////////////////////////////
 
     return (
       <div className="App">
-  <header> 
-        <h1>Novice Plant Mother</h1>
+        
+  <header className="header"> 
+  <div className="overshadow"> 
+        <h1 className="title">Novice Plant Mother</h1>
+    <Nav className="justify-content-center"> 
+        <Nav.Item>
         <Link to="/create">
-          <button> Add New Plant</button>
+          <button className="header-btn"> Add New Plant</button>
         </Link>
+        </Nav.Item>
+        <Nav.Item>
         <Link to="/">
-          <button> Home</button>
+          <button className="header-btn"> Home</button>
         </Link>
+        </Nav.Item>
+    </Nav>
+    </div>
   </header> 
+  
+  <div className="division">
 
-<div>
+  </div>
+<main className="main">
+  
+{/* <div className="main-1">
+        {/* <img src="https://i.pinimg.com/originals/5a/35/62/5a356215f119a1d812e470e464bdb3fd.jpg"/> */}
+      {/* </div> */} 
+
+<div className="main-2">
 
           <Switch>
             <Route exact path="/" render = {(rp)=>
@@ -122,14 +145,22 @@ const deletePlant = (plant)=>{
           }
         />
 
-
-
-
-
           </Switch>
 
           </div>   
+      </main>
        
+<footer className="footer">
+   
+    <a href="https://github.com/iadjivon"> <h5> Github </h5></a> 
+    <hr className="hr"></hr>
+    <a href="https://www.linkedin.com/in/ida-adjivon/"> <h5> LinkedIn</h5></a> 
+  
+    
+    
+   
+
+  </footer>
       </div>
   );
 }

@@ -15,40 +15,41 @@ const handleChange = (event) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+      <div className="form"> 
+    <form onSubmit={handleSubmit} className="form">
         <input
             type="text" 
             name = "plant_name" 
-            placeholder=" scientific name of plant" 
+            placeholder=" The scientific name of this plant" 
             value={formData.plant_name} 
             onChange={handleChange}/>
        
         <input 
             type="text" 
-            name = "description" 
-            placeholder=" brief description of plant" 
-            value={formData.description} 
-            onChange={handleChange}/>
-
-
-        <input 
-            type="text" 
             name = "image" 
-            placeholder=" image of plant" 
+            placeholder=" Insert a link to the image of this plant" 
             value={formData.image} 
             onChange={handleChange}/>
 
         <input 
             type="text" 
-            name = "pet_name" 
-            placeholder=" pet name for plant" 
+            name = "pet_name"
+            placeholder=" Add your pet name for this plant" 
             value={formData.pet_name} 
             onChange={handleChange}/>
 
-        <input type="submit"  value= "Submit"/>
+        <input
+            type="text" 
+            name = "description" 
+            placeholder=" Write a brief description about this plant" 
+            value={formData.description} 
+            onChange={handleChange} className="textarea"/>
+
+        <input type="submit"  value= "Submit" className="submit"/>
        
         
     </form>
+    </div>
   );
 };
 

@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const Show = (props) => {
-    const {plant} = props.plant
+    const plant = props.plant
 
     return (
         <div>

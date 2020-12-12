@@ -1,6 +1,9 @@
 .App {
   text-align: center;
+  /* background-color: greenyellow; */
+
 }
+
 
 .App-logo {
   height: 40vmin;
@@ -35,4 +38,264 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+
+/* -------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Nothing+You+Could+Do&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+/* HEADER */
+.header{
+  height: 550px;
+  position: relative;
+  overflow: hidden;
+  background-image: 
+    url("https://www.plantshed.com//media/wysiwyg/retail_stores/englewood-retail_header.jpg");
+  background-size: cover;
+  margin-bottom: 10px;
+  background-repeat: no-repeat;
+  /* background-color: rgba(126, 118, 118, 0.5); */
+  /* background: rgba(240, 234, 234, 0.95); */
+}
+
+.overshadow{
+ background-color: rgba(150, 143, 143, 0.25);
+ height: 550px;
+}
+
+.header::after{
+  content: " ";
+  position: absolute;
+  opacity: 0.5;
+  z-index: 1;
+  background-image: 
+  url("https://www.plantshed.com//media/wysiwyg/retail_stores/englewood-retail_header.jpg");
+background-size: cover;
+margin-bottom: 10px;
+background-repeat: no-repeat;
+}
+
+.header h1{
+  justify-content: center;
+  align-items: center;
+  padding-top: 75px;
+  /* padding-left: 300px; */
+  font-family: 'Nothing You Could Do', cursive;
+  font-size: 120px;
+  margin-top: 5px;
+  color: #ebebeb;
+  
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0px;
+  /* padding-left: 200px; */
+
+}
+
+.header-btn{
+  width: 350px;
+  height: 50px;
+  margin: 5px;
+  font-size: 18px;
+  background-color:rgb(177, 168, 149);
+  border: none;
+}
+
+.header-btn:hover{
+  background-color: rgb(170, 149, 104);
+  
+}
+
+.division{
+  background-color: black;
+  height: 20px;
+}
+
+/* MAIN */
+
+.main{
+  /* display: flex; */
+  flex-direction: row;
+  width: 100%;
+  /* justify-content: space-around; */
+ 
+}
+
+/* .main-1{
+ display: flex; 
+  flex-wrap: wrap; 
+  background-image: url("https://i.pinimg.com/originals/5a/35/62/5a356215f119a1d812e470e464bdb3fd.jpg");
+  background-size: cover;
+  background-repeat: no-repeat; 
+  min-width: 35%;
+  order: 2; 
+
+ }   */
+
+.main-2{
+  /* display: flex; */
+  width: auto;
+  /* height: 700px; */
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-basis: center;
+  /* background-color:#d9dad5; */
+ background-image: url("https://i.pinimg.com/originals/a0/7e/bd/a07ebd32b489dcf01905f35d0f73b306.jpg");
+  background-size: cover;
+  background-repeat: no-repeat; 
+  /* background-color: rgb(8, 49, 6); */
+ }
+
+
+ /* -----------Displays----------- */
+
+.display{
+  margin:10px;
+  padding: 3px;
+  background-color: #bd9d7c;
+  border-radius: 5px;
+  border: 2px  #e6e7ea;
+  height: 550px;
+  /* width: 250px; */
+}
+
+.display img{
+  width: 300px;
+  height: 230px;
+  margin-top:10px;
+  border: 5px  #e6e7ea;
+}
+
+.display-main-2{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-basis: center;
+}
+
+
+.card-text{
+  height: 100px;
+  overflow: scroll;
+  padding: 5px;
+  /* margin-top: 7px; */
+  align-self: center;
+  text-align: center;
+  text-justify: center;
+
+}
+
+h2{
+  margin: -3px;
+  font-family: 'Handlee', cursive;
+  font-size: 30px;
+  /* border: 3px solid black; */
+ 
+}
+
+.schedule{
+  margin: 0px;
+  background-color: rgb(12, 131, 131);
+  font-style: italic;
+  color: white;
+  margin-bottom: 10px;
+
+}
+
+.card{
+  /* border: 1px solid black;
+  margin: 2px; */
+}
+
+
+/* -----------Buttons----------- */
+.btn{
+  background-color: #1e4819;
+  border: none;
+  margin: 7px;
+  width: 100px;
+  height: 50px;
+  font: 16px;
+  color: white;
+  
+
+}
+
+.submit{
+  font-size: 18px;
+  background-color:rgb(177, 168, 149);
+  border: none;
+}
+
+.submit:hover{
+  background-color: rgb(170, 149, 104);
+  
+}
+
+/* -----------Form----------- */
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+ align-items: center;
+ 
+}
+
+.form input{
+  width: 500px;
+  padding: 25px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+ align-items: center;
+ font-size: 20px;
+  
+}
+
+.textarea{
+  width: 500px;
+  height: 300px;
+  columns: 10;
+}
+
+/* -----------Form----------- */
+.footer{
+  height: 100px;
+  text-decoration: none;
+  text-emphasis: none;
+  background-color: rgb(27, 25, 25);
+  color: #bd9d7c;
+}
+
+.hr{
+  width: 550px;
+
+}
+
+.footer a{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0px;
+  padding: 0px;
+  color: #bd9d7c;
+  background-color: rgb(27, 25, 25);
+  font-size: 20px;
+}
+
+.white {
+  color: blue;
+  background-color: rgb(27, 25, 25);
 }
