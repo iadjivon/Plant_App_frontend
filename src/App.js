@@ -3,12 +3,12 @@ import './App.css';
 import React from 'react';
 import {Route, Link, Switch} from 'react-router-dom'
 
-import Display from './components/Display';
+import Display from  './components/Display'
 import Form from './components/Form';
 import Show from './components/Show';
 
 import Nav from 'react-bootstrap/Nav'
-import Button from 'react-bootstrap/Button'
+
 
 
 function App () {
