@@ -13,7 +13,7 @@ import Button from 'react-bootstrap/Button'
 
 function App () {
 // VARIABLE TO HOLD PLANTS 
-    const url = "http://localhost:3000"
+    const url = "https://nov-plant-app.herokuapp.com"
 // // state to hold plants 
     const [plants, setPlants] = React.useState([])
 
