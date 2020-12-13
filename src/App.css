@@ -127,6 +127,8 @@ background-repeat: no-repeat;
   /* display: flex; */
   flex-direction: row;
   width: 100%;
+  max-width: 100%;
+
   /* justify-content: space-around; */
  
 }
@@ -145,6 +147,7 @@ background-repeat: no-repeat;
 .main-2{
   /* display: flex; */
   width: auto;
+  max-width: 100%;
   /* height: 700px; */
   flex-direction: row;
   flex-wrap: wrap;
@@ -162,7 +165,7 @@ background-repeat: no-repeat;
 .display{
   margin:10px;
   padding: 3px;
-  background-color: #bd9d7c;
+  background-color: rgba(204, 183, 151, 0.85);
   border-radius: 5px;
   border: 2px  #e6e7ea;
   height: 550px;
@@ -226,7 +229,7 @@ h2{
   margin: 7px;
   width: 100px;
   height: 50px;
-  font: 16px;
+  font-size: 17px;
   color: white;
   
 
@@ -249,16 +252,20 @@ h2{
   flex-direction: column;
   justify-content: right;
  align-items: center;
+ max-width: 95%;
+ max-height: 100%;
  
 }
 
 .form input{
   width: 500px;
+  max-width: 90%;
+  max-height: 100%;
   padding: 25px;
   margin: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: right;
+  justify-content: center;
  align-items: center;
  font-size: 20px;
   
@@ -266,22 +273,36 @@ h2{
 
 .textarea{
   width: 510px;
+  max-width: 100%;
   height: 300px;
+  max-height: 100%;
   columns: 10;
   font-family: Arial, sans-serif;
-  font-size: larger;
-  text-indent: 20px;
+  font-size: 20px;
+  /* text-indent: 7px; */
   justify-content: center;
   align-items: center;
   display: flex;
   align-content: center;
   padding: 20px;
   border: none;
+  margin-top: 10px;
   /* text-align: center; */
   /* text-justify: center; */
 }
 .textarea::placeholder{
  margin-top: 100px;
+}
+
+.form-title{
+  justify-content: center;
+  align-items: center;
+  padding-top: 170px;
+  /* padding-left: 300px; */
+  font-family: 'Nothing You Could Do', cursive;
+  font-size: 70px;
+  margin-top: 5px;
+  color:  rgb(72, 68, 59)
 }
 
 /* -----------Form----------- */
@@ -313,3 +334,32 @@ h2{
   color: blue;
   background-color: rgb(27, 25, 25);
 }
+
+
+/* Media Queries: Tablet Landscape */
+@media screen and (max-width: 1060px) {
+  #primary { width:67%; }
+  #secondary { width:30%; margin-left:3%;}  
+}
+
+/* Media Queries: Tabled Portrait */
+@media screen and (max-width: 768px) {
+  #primary { width:100%; }
+  #secondary { width:100%; margin:0; border:none; }
+}
+
+@media (min-device-width:600px) {
+  img[data-src-600px] {
+      content: attr(data-src-600px, url);
+  }
+}
+
+@media (min-device-width:800px) {
+  img[data-src-800px] {
+      content: attr(data-src-800px, url);
+  }
+}
+
+@media (min-width: 640px) { body {font-size:0.9rem;} } 
+@media (min-width:960px) { body {font-size:1rem;} } 
+@media (min-width:1100px) { body {font-size:1.2rem;} } 

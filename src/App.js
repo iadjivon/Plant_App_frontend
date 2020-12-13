@@ -125,16 +125,22 @@ const deletePlant = (plant)=>{
             <Route 
               exact path="/create"
               render={(rp) => (
+                <>
+                <h1 className="form-title"> Let's welcome a new plant! </h1>
                 <Form {...rp} label="create" plant={{emptyPlant}}
                  handleSubmit=
                 {handleCreate} />
+                </>
                 )}
             />
 
             <Route
               exact path="/edit"
               render={(rp) => (
+                <>
+                <h1 className="form-title"> Let's make a quick adjustment. </h1>
                 <Form {...rp} label="update" plant={selectedPlant} handleSubmit={handleUpdate} />
+                </>
                 )}
             />
         
