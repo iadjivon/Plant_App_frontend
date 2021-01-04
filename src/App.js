@@ -9,7 +9,7 @@ import Show from './components/Show';
 
 import Nav from 'react-bootstrap/Nav'
 
-// This is a change to test for push to github
+
 
 function App () {
 // VARIABLE TO HOLD PLANTS 
