@@ -1,3 +1,13 @@
+
+# Application information
+
+### Novice Plant mother is a web application for all plant parents to use to keep track of their plants while learning more about the plant species they have in their homes or gardens. 
+
+<br/>
+<hr/>
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
