@@ -14,6 +14,7 @@ import Nav from 'react-bootstrap/Nav'
 function App () {
 // VARIABLE TO HOLD PLANTS 
     const url = "https://nov-plant-app.herokuapp.com"
+    // const url = ""
 // // state to hold plants 
     const [plants, setPlants] = React.useState([])
 
@@ -180,4 +181,4 @@ export default App;
 //      GIT_AUTHOR_EMAIL=65119712+iadjivon@users.noreply.github.com;
 //      GIT_AUTHOR_NAME="Ida Adjivon";
 //      GIT_COMMITTER_EMAIL=$GIT_AUTHOR_EMAIL;
-//      GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"; fi' -- --all
+//      GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"; fi' -- --all 
